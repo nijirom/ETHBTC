@@ -15,7 +15,7 @@ CRITICAL_BACKOFF_SECONDS = 1800
 
 ALERT_SENT = False
 
-def send_pushover_notification(title, message, priority=1):
+def send_pushover_notification(title, message, priority=+2):
     if PUSHOVER_API_TOKEN == "" or \
        PUSHOVER_USER_KEY == "":
         print("API not configured")
@@ -114,4 +114,5 @@ if __name__ == "__main__":
         sys.exit(0)
     except Exception as e:
         print(f"An unhandled error occurred: {e}")
+
         sys.exit(1)
